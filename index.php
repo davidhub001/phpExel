@@ -70,6 +70,17 @@ $objPHPExcel->getActiveSheet()->setTitle("$nomfichier");
 // Set active sheet index to the first sheet, so Excel opens this as the first sheet
 $objPHPExcel->setActiveSheetIndex(0);
 
+$gdImage = imagecreatefromjpeg('images/test2.jpg');
+// Add a drawing to the worksheetecho date('H:i:s') . " Add a drawing to the worksheet\n";
+$objDrawing = new PHPExcel_Worksheet_MemoryDrawing();
+$objDrawing->setName('Sample image');
+$objDrawing->setDescription('Sample image');
+$objDrawing->setImageResource($gdImage);
+$objDrawing->setRenderingFunction(PHPExcel_Worksheet_MemoryDrawing::RENDERING_JPEG);
+$objDrawing->setMimeType(PHPExcel_Worksheet_MemoryDrawing::MIMETYPE_DEFAULT);
+$objDrawing->setHeight(50);
+$objDrawing->setCoordinates('F1');
+$objDrawing->setWorksheet($objPHPExcel->getActiveSheet());
 
 // Redirect output to a client’s web browser (Excel2007)
 header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
