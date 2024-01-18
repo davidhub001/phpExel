@@ -43,25 +43,25 @@ $objPHPExcel = new PHPExcel();
 
 // Set document properties
 $objPHPExcel->getProperties()->setCreator("ANDRIAMASINAVALONA Davidson")
-							 ->setLastModifiedBy("enjana")
+							 ->setLastModifiedBy("test")
 							 ->setTitle("$nomfichier")
 							 ->setSubject("$nomfichier")
-							 ->setDescription("$nomfichier enjana")
+							 ->setDescription("$nomfichier test")
 							 ->setKeywords("$nomfichier")
 							 ->setCategory("$nomfichier");
 
 
 // Add some data
 $objPHPExcel->setActiveSheetIndex(0)
-            ->setCellValue('A1', 'enjana')
-            ->setCellValue('B2', 'le fou!')
-            ->setCellValue('C1', 'david')
-            ->setCellValue('D2', 'le fou!');
+            ->setCellValue('A1', 'test1')
+            ->setCellValue('B2', 'test2')
+            ->setCellValue('C1', 'test3')
+            ->setCellValue('D2', 'test4');
 
 // Miscellaneous glyphs, UTF-8
 $objPHPExcel->setActiveSheetIndex(0)
-            ->setCellValue('A4', 'andriamasinavalona')
-            ->setCellValue('A5', 'david le fou');
+            ->setCellValue('A4', 'test5')
+            ->setCellValue('A5', 'test6');
 
 // Rename worksheet
 $objPHPExcel->getActiveSheet()->setTitle("$nomfichier");
